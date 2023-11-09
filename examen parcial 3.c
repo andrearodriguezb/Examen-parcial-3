@@ -13,9 +13,9 @@ int main() {
     }
 
     char buffer[BUFFER_SIZE];
-    int contar[MAX_COLUMNAS] = {0};
+    int count[MAX_COLUMNAS] = {0};
     char palabras[MAX_COLUMNAS][50];  
-    int fila_inicio = 277;
+    int fila_inicio = 676;
     int columna = -1;
     int i;
 
@@ -67,7 +67,7 @@ int main() {
                     val = val * 10 + (token[i] - '0');
                     i++;
                 }
-                contar[indice_columna] += val;
+                count[indice_columna] += val;
             }
             token = strtok(NULL, ",");
             indice_columna++;
@@ -84,7 +84,7 @@ int main() {
 
     for (i = 0; i < MAX_COLUMNAS; i++) {
         if (i != columna&& palabras[i][0] != '\0') {
-            fprintf(archivo_salida, "%s, %d\n",palabras[i], contar[i]);
+            fprintf(archivo_salida, "%s, %d\n",palabras[i], count[i]);
         }
     }
 
